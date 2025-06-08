@@ -11,7 +11,7 @@ class App extends Component {
       items: [
         {
           id: 1,
-          img: 'chair.png',
+          img: 'chair.jpg',
           title: 'Стул',
           desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas mollitia error eius sit quae modi.',
           category: 'chairs',
@@ -19,7 +19,7 @@ class App extends Component {
         },
         {
           id: 2,
-          img: 'sofa.png',
+          img: 'sofa.jpg',
           title: 'Диван',
           desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
           category: 'sofa',
@@ -27,7 +27,7 @@ class App extends Component {
         },
         {
           id: 3,
-          img: 'table.png',
+          img: 'table.jpg',
           title: 'Стол',
           desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas mollitia error eius sit quae modi.',
           category: 'tables',
@@ -35,7 +35,7 @@ class App extends Component {
         },
         {
           id: 4,
-          img: 'lamp.png',
+          img: 'lamp.jpg',
           title: 'Лампа',
           desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
           category: 'lamps',
@@ -43,21 +43,27 @@ class App extends Component {
         },
         {
           id: 5,
-          img: 'chandelier.png',
+          img: 'chandelier.jpg',
           title: 'Люстра',
           desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
           category: 'chandelier',
           price: '20.99',
         },
       ],
+      orders: [],
     }
   }
 
+  addToOrder = (item) => {
+    this.setState({orders: [...this.state.orders, item]})
+  }
+
   render() {
+    const {orders, items} = this.state;
     return (
       <div className="container">
-        <Header />
-        <Items items={this.state.items} />
+        <Header orders={orders} />
+        <Items onAdd={this.addToOrder} items={items} />
         <Footer />
       </div>  
     )

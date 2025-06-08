@@ -5,14 +5,16 @@
 }
 
 :root {
+  --text-color-light: #fff;
   --text-color-dark: #222;
+  --hover-color: #c94d4d;
 }
 
 body {
   font-family: 'Motserrat', sans-serif;
   font-size: 14px;
   font-weight: 300;
-  background-color: #fff;
+  background-color: var(--text-color-light);
   color: var(--text-color-dark);
 }
 
