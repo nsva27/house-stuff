@@ -1,0 +1,49 @@
+.shop-card {
+  width: 400px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 0px;
+  top: 40px;
+  z-index: 2;
+  background-color: #f5f5f5;
+  box-shadow: 0px 0px 6px #4747476f;
+  overflow: hidden;
+
+  .item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 0px;
+    border-radius: 0px;
+    border-bottom: 1px solid #c7c7c7;
+    position: relative;
+
+    .item__img {
+      width: 80px;
+      height: 80px;
+      margin-right: 20px;
+    }
+
+    .item__title {
+      font-size: 18px;
+    }
+
+    .item__price {
+      margin-top: 0;
+      font-size: 16px;
+      font-weight: 400;
+    }
+  }
+
+  .item:last-child {
+    border-bottom: none;
+  }
+
+  .item:hover {
+    box-shadow: 0px 0px 8px rgb(190, 190, 190);
+    z-index: 10;
+  }
+}

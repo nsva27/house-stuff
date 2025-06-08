@@ -23,9 +23,9 @@ export default function Header(props) {
           </nav>
           {cardOpen && (
             <div className="shop-card" >
-              {orders.map(item => {
+              {orders.map(item => (
                 <Order key={item.id} item={item} />
-              })}
+              ))}
             </div>
           )}
       </div>

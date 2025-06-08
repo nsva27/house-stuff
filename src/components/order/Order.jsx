@@ -1,5 +1,7 @@
+import './order.css'
+
 export default function Order(props) {
-  const {img, title, price} = props;
+  const {img, title, price} = props.item;
 
     return (
       <div className="item">
