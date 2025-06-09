@@ -47,3 +47,12 @@
     z-index: 10;
   }
 }
+
+.shop-card_empty {
+  padding: 15px;
+
+  h2 {
+    font-size: 16px;
+    color: #414141;
+  }
+}

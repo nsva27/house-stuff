@@ -7,6 +7,25 @@ export default function Header(props) {
   let [cardOpen, setCardOpen] = useState(false);
   const {orders} = props;
 
+  const showOrders = (orders) => {
+    return (
+      <>
+        {orders.map(item => (
+          <Order key={item.id} item={item} />
+        ))} 
+      </>
+    ) 
+  }
+
+  const showNothing = () => {
+    return (
+      <div className="shop-card_empty">
+        <h2>Товары не найдены</h2>
+      </div>
+    )
+  }
+  
+
   return (
     <header className="header">
       <div className="header__wrapper">
@@ -23,9 +42,7 @@ export default function Header(props) {
           </nav>
           {cardOpen && (
             <div className="shop-card" >
-              {orders.map(item => (
-                <Order key={item.id} item={item} />
-              ))}
+              {orders.length > 0 ? showOrders(orders) : showNothing()}
             </div>
           )}
       </div>
