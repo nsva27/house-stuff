@@ -13,6 +13,11 @@
   }
 }
 
+.item__wrapper {
+  display: flex;
+
+}
+
 .item__img {
   height: 350px;
   overflow: hidden;

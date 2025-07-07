@@ -5,14 +5,21 @@ import './header.css'
 
 export default function Header(props) {
   let [cardOpen, setCardOpen] = useState(false);
-  const {orders} = props;
+  const {orders, onDelete} = props;
 
   const showOrders = (orders) => {
+    let orderSumm = 0;
+
+    orders.forEach(order => {
+      orderSumm += Number.parseFloat(order.price);
+    })
+
     return (
       <>
         {orders.map(item => (
-          <Order key={item.id} item={item} />
+          <Order key={item.id} item={item} onDelete={onDelete} />
         ))} 
+        <p className="order-summ"><span>Сумма заказа:</span> {orderSumm.toFixed(2)}$</p>
       </>
     ) 
   }
@@ -24,7 +31,6 @@ export default function Header(props) {
       </div>
     )
   }
-  
 
   return (
     <header className="header">

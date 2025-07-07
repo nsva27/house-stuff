@@ -15,6 +15,7 @@
     width: 100%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 10px;
     margin-bottom: 0px;
     border-radius: 0px;
@@ -45,6 +46,20 @@
   .item:hover {
     box-shadow: 0px 0px 8px rgb(190, 190, 190);
     z-index: 10;
+  }
+
+  .delete-item {
+    position: relative;
+    top: 50%;
+    right: 20px;
+    color: var(--hover-color);
+    cursor: pointer;
+    transition: all 0.4s ease;
+  }
+
+  .delete-item:hover {
+    color: var(--hover-color-dark);
+    transform: scale(1.5);
   }
 }
 

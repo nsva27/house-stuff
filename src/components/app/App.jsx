@@ -55,14 +55,28 @@ class App extends Component {
   }
 
   addToOrder = (item) => {
-    this.setState({orders: [...this.state.orders, item]})
+    let isInList = false;
+
+    this.state.orders.forEach(el => {
+      if (el.id === item.id) {
+        isInList = true;
+      }
+    });
+
+    if (!isInList) {
+        this.setState({orders: [...this.state.orders, item]});
+      }
+  }
+
+  deleteFromOrder = (id) => {
+    this.setState({orders: this.state.orders.filter(el => el.id !== id)});
   }
 
   render() {
     const {orders, items} = this.state;
     return (
       <div className="container">
-        <Header orders={orders} />
+        <Header onDelete={this.deleteFromOrder} orders={orders} />
         <Items onAdd={this.addToOrder} items={items} />
         <Footer />
       </div>  
